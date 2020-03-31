@@ -1,0 +1,17 @@
+#When we concatenate a string, it will generate a new string, because string is immutable
+#This will waste space. It's better to clean the string using a list than using a string.
+clean_list = []
+clean_str = ""
+for i in s:
+    if i.isalnum():
+        clean_list.append(i.lower())
+clean_str = ''.join(clean_list)
+# print(clean_str)
+l = 0
+r = len(clean_str) - 1
+while (l < r):
+    if clean_str[l] != clean_str[r]:
+        return False
+    l += 1
+    r -= 1
+return True
